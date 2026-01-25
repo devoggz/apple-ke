@@ -30,6 +30,10 @@
     font-display: swap;
 }
 
+* {
+    scrollbar-color: var(--color-dark-100) var(--color-black);
+}
+
 
 
 @theme {
@@ -38,7 +42,9 @@
     --font-semibold: "SemiBold";
     --font-bold: "Bold";
     --color-primary: #0071e3;
+
     --color-dark-100: #86868b;
+    --color-dark-300: #262626;
     --color-dark-200: #2e2e30;
     --color-light-100: #adb5bd;
     --color-gray: #F5F5F7;
@@ -52,9 +58,9 @@ html {
 
 body {
     width: 100vw;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
+    /*-webkit-font-smoothing: antialiased;*/
+    /*-moz-osx-font-smoothing: grayscale;*/
+    /*text-rendering: optimizeLegibility;*/
     overflow-x: hidden;
     color: var(--color-dark-100);
 }
@@ -76,7 +82,7 @@ body {
 }
 
 @utility h3-semibold {
-    @apply font-semibold text-xl text-dark-100;
+    @apply font-medium text-xl text-dark-100;
 }
 
 @utility base-semibold {
@@ -89,10 +95,10 @@ body {
 
 @layer components {
     header {
-        @apply w-screen fixed top-0 left-0 z-50 flex-center bg-black min-h-[7vh];
+        @apply w-screen fixed top-0 left-0 z-50 flex-center bg-black min-h-[5vh];
 
         nav {
-            @apply container mx-auto flex-between px-5 2xl:px-0;
+            @apply container max-w-7xl mx-auto flex-between px-5 2xl:px-0;
 
             img {
                 @apply cursor-pointer hover:-translate-y-0.5 transition-all duration-300 ease-in-out;
@@ -106,36 +112,83 @@ body {
                 @apply flex-center gap-8;
 
                 a {
-                    @apply hidden md:block text-white opacity-40 font-regular text-sm cursor-pointer hover:opacity-100 transition-all duration-300 ease-in-out;
+                    @apply hidden md:block text-white opacity-80 font-regular text-sm cursor-pointer hover:opacity-100 transition-all duration-300 ease-in-out hover:font-medium;
                 }
             }
         }
     }
 
+
+
     #hero {
-        @apply h-fit lg:h-[600px] col-center mt-10 lg:mt-10 2xl:mt-[7vh];
+        @apply max-w-screen h-fit lg:h-[100vh] flex flex-col items-center space-y-6 lg:py-24 overflow-clip ;
 
         div {
-            @apply relative z-10 col-center  ;
+            @apply relative z-10  col-center  ;
 
             h1 {
-                @apply font-semibold lg:text-3xl 2xl:text-5xl ;
+                @apply text-dark-100 font-semibold tracking-normal py-24 md:py-10 text-4xl md:text-6xl lg:text-7xl text-center max-w-lg mx-auto ;
+            }
+            span {
+                background: linear-gradient(
+                        91deg,
+                        #35a98a 0%,
+                        #6dd400 100%,
+                        #f2416b 74%,
+                        #eb7500 100%
+                );
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+
+
+            img {
+                @apply container mx-auto w-full absolute fixed bottom-0;
+            }
+        }
+
+
+            p {
+                @apply lg:h3-semibold base-semibold leading-relaxed mx-auto max-w-xl text-center px-5 ;
+            }
+
+
+            button {
+            @apply relative mb-12 z-10 bg-primary text-white py-2 px-6 mt-6 lg:mt-8  rounded-full font-medium text-lg cursor-pointer hover:bg-white hover:text-black transition-all duration-300 ease-in-out;
+            }
+
+
+    }
+    #repairs {
+        @apply  flex flex-col items-center translate-y-20 space-y-8;
+
+        div {
+            @apply  col-center  ;
+
+            h1 {
+                @apply text-dark-200 dark:text-dark-100 font-semibold tracking-normal text-3xl md:text-7xl text-center max-w-lg mx-auto ;
             }
 
             img {
-                @apply container mx-auto w-2/3;
+                @apply container mx-auto w-full;
             }
+        }
+
+
+        p {
+            @apply lg:h3-semibold base-semibold leading-relaxed mx-auto max-w-xl text-center translate-y-10 px-5 ;
         }
 
 
         button {
-            @apply relative z-10 bg-primary text-white py-2 px-6 mt-10 lg:mt-0 mb-5 rounded-full font-semibold text-lg cursor-pointer hover:bg-white hover:text-black transition-all duration-300 ease-in-out;
+            @apply relative mb-12 z-10 bg-primary text-white py-2 px-4 mt-16 md:mt-24  rounded-full font-medium text-lg cursor-pointer hover:bg-white hover:text-black transition-all duration-300 ease-in-out;
         }
 
-        p {
-            @apply lg:h3-semibold base-semibold;
-        }
+
     }
+
 
     #product-viewer {
         @apply container relative min-h-[93vh] mx-auto px-5 2xl:px-0 mt-40;
@@ -215,6 +268,7 @@ body {
             h3 {
                 @apply font-semibold text-xl lg:text-5xl text-white;
             }
+
         }
     }
 
@@ -226,7 +280,7 @@ body {
         }
 
         .wrapper {
-            @apply w-7xl 2xl:w-[100rem] h-[50vh] lg:h-screen relative;
+            @apply w-7xl 2xl:w-[100rem] h-[50vh] lg:h-[80hv] relative;
 
             img {
                 @apply max-w-40 lg:max-w-[27rem] 2xl:max-w-[35rem] object-cover object-center;
@@ -291,14 +345,17 @@ body {
     }
 
     #highlights {
-        @apply container mx-auto lg:py-40 max-lg:px-5;
+        @apply px-6  mx-auto lg:py-20 translate-y-24;
 
         h2 {
-            @apply text-white font-semibold text-3xl lg:text-7xl text-center max-w-3xl mx-auto;
+            @apply text-dark-200 dark:text-dark-100 font-semibold text-3xl md:text-7xl text-center max-w-3xl mx-auto;
         }
 
         h3 {
-            @apply text-[#F5F5F7] font-semibold text-xl lg:text-3xl text-center mt-10;
+            @apply text-dark-100 font-semibold text-xl md:text-3xl text-center mt-10;
+        }
+        .button {
+            @apply relative mb-12 z-10 bg-primary text-white py-2.5 px-6 mt-12 lg:mt-12  rounded-full font-medium text-lg cursor-pointer hover:bg-white hover:text-black transition-all duration-300 ease-in-out;
         }
 
         .masonry {
@@ -395,17 +452,20 @@ body {
     }
 
     footer {
-        @apply container mx-auto py-7 max-lg:px-5;
+        @apply  w-screen px-8  bottom-0 mx-auto py-7 max-lg:px-5;
 
         .info {
-            @apply flex-between;
+            @apply  flex-between;
 
             p {
-                @apply text-sm font-medium;
+                @apply  text-sm font-medium;
 
                 span {
-                    @apply text-primary mx-0.5;
+                    @apply  text-primary mx-0.5;
                 }
+            }
+            img{
+                @apply w-18 ;
             }
         }
 
@@ -414,7 +474,7 @@ body {
         }
 
         .links {
-            @apply flex flex-col lg:flex-row lg:items-center justify-between max-lg:mt-5 gap-5 text-sm;
+            @apply  flex flex-col lg:flex-row lg:items-center justify-between max-lg:mt-5 gap-5 text-sm;
 
             ul {
                 @apply lg:divide-x flex flex-col lg:flex-row gap-2.5;
@@ -425,4 +485,58 @@ body {
             }
         }
     }
+    /* Phone Input Styles */
+    .phone-input-wrapper {
+        @apply relative w-full pt-5;
+    }
+
+    .phone-input-wrapper label {
+        @apply absolute top-0 left-0 text-sm pointer-events-none;
+        color: #71717a;
+    }
+
+    .phone-input-wrapper .required-asterisk {
+        @apply ml-0.5;
+        color: #f31260;
+    }
+
+    .PhoneInput {
+        @apply pb-2 transition-colors duration-200;
+        border-bottom: 2px solid #e4e4e7;
+    }
+
+    .PhoneInput:focus-within {
+        border-bottom-color: #18181b;
+    }
+
+    .PhoneInput input {
+        @apply w-full text-base !border-0 !outline-none !bg-transparent !p-0;
+    }
+
+    .PhoneInputCountry {
+        @apply mr-2;
+    }
+
+    .PhoneInputCountryIcon {
+        @apply w-5 h-5;
+    }
 }
+
+/*:root {*/
+/*    --apple-gray: #1d1d1f;*/
+/*    --apple-muted: #86868b;*/
+/*}*/
+
+.apple-card {
+    @apply bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300;
+}
+
+.apple-button {
+    @apply rounded-full px-6 py-3 font-medium bg-black text-white hover:opacity-90;
+}
+
+.glass {
+    @apply backdrop-blur-md bg-white/70 border border-white/20;
+}
+
+

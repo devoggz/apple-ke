@@ -1,12 +1,26 @@
+import gsap from "gsap";
 
-import Hero from "@/components/Hero";
-import Repair from "@/components/Repair";
+import { ScrollTrigger } from "gsap/all";
+import {
+  Repairs,
+  Hero,
+  TradeIn,
+  Macbook,
+  Showcase,
+  HeroAlt,
+} from "@/components/sections";
+
+gsap.registerPlugin();
 
 export default function Home() {
   return (
-    <main >
-      <Hero/>
-      <Repair/>
+    <main>
+      <HeroAlt />
+
+      <Repairs />
+      {/*<Macbook/>*/}
+      <Showcase />
+      {/*<TradeIn/>*/}
     </main>
   );
 }

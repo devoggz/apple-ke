@@ -1,7 +1,7 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "apple centre ke",
+  name: "Genuine Apple Products Kenya",
   description: "your apple home",
   navItems: [
     {
@@ -9,20 +9,24 @@ export const siteConfig = {
       href: "/",
     },
     {
-      label: "Docs",
-      href: "/docs",
+      label: "Shop",
+      href: "/shop",
     },
     {
-      label: "Pricing",
-      href: "/pricing",
+      label: "Trade In",
+      href: "/trade-in",
     },
     {
-      label: "Blog",
-      href: "/blog",
+      label: "Repairs",
+      href: "/repairs",
     },
     {
-      label: "About",
-      href: "/about",
+      label: "Newsletter",
+      href: "/newsletter",
+    },
+    {
+      label: "Contact",
+      href: "/contact",
     },
   ],
   navMenuItems: [

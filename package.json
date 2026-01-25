@@ -1,6 +1,7 @@
 {
   "name": "next-app-template",
   "version": "0.0.1",
+  "type": "module",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
@@ -16,13 +17,15 @@
     "clsx": "2.1.1",
     "framer-motion": "^12.27.0",
     "gsap": "^3.14.2",
-    "intl-messageformat": "10.7.16",
+    "intl-messageformat": "^11.1.1",
     "lucide-react": "^0.562.0",
     "next": "15.5.9",
     "next-themes": "0.4.6",
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "react-responsive": "^10.0.1"
+    "react-phone-number-input": "^3.4.14",
+    "react-responsive": "^10.0.1",
+    "zustand": "^5.0.10"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "15.5.9",
