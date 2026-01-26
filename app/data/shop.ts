@@ -163,7 +163,7 @@ export const shopData: Category[] = [
     name: "MacBook",
     slug: "macbook",
     icon: "Laptop",
-    image: "/Mac.png",
+    image: "/Macbook-laptop.png",
     description: "Apple laptops powered by Apple silicon.",
     products: [
       {
@@ -265,7 +265,7 @@ export const shopData: Category[] = [
     name: "Mac",
     slug: "mac",
     icon: "Headphones",
-    image: "/watch.png",
+    image: "/images/mac_studio.png",
     description: "Essential Apple accessories.",
     products: [],
   },
@@ -274,7 +274,7 @@ export const shopData: Category[] = [
     name: "Airpods",
     slug: "airpods",
     icon: "Headphones",
-    image: "/watch.png",
+    image: "/images/airpods.png",
     description: "Essential Apple accessories.",
     products: [],
   },
@@ -292,7 +292,7 @@ export const shopData: Category[] = [
     name: "HomePod",
     slug: "home-pod",
     icon: "Headphones",
-    image: "/watch.png",
+    image: "/images/homepod.png",
     description: "Essential Apple accessories.",
     products: [],
   },
@@ -312,7 +312,7 @@ export const shopData: Category[] = [
     name: "Accessories",
     slug: "accessories",
     icon: "Headphones",
-    image: "/watch.png",
+    image: "/images/airtag.png",
     description: "Essential Apple accessories.",
     products: [
       {

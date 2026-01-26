@@ -14,7 +14,7 @@ export default function CategoryCard({ category }: CategoryCardProps) {
 
   return (
     <motion.div
-      className="overflow-clip rounded-xl bg-gray-50 dark:bg-dark-300 h-[460px] flex flex-col items-center cursor-pointer space-y-4 transition-shadow"
+      className="overflow-clip rounded-xl bg-gray-50 dark:bg-dark-300 h-[500px] flex flex-col items-center cursor-pointer space-y-4 transition-shadow"
       whileHover={{ scale: 1.03 }}
       onClick={() => router.push(`/shop/${category.slug}`)}
     >
@@ -38,7 +38,7 @@ export default function CategoryCard({ category }: CategoryCardProps) {
       <img
         src={category.image}
         alt={category.name}
-        className="w-full h-fit object-cover"
+        className="w-full h-fit object-contain"
       />
     </motion.div>
   );
