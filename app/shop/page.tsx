@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { shopData, Category, Product } from "@/app/data/shop";
+import { shopData, Category } from "@/app/data/shop";
 import CategoryNav from "@/components/shop/CategoryNav";
 import FiltersSidebar from "@/components/shop/FilterSidebar";
 import ProductGrid from "@/components/shop/ProductGrid";
@@ -10,7 +10,6 @@ export default function ShopPage() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedProduct, setSelectedProduct] = useState<string | null>(null);
 
-  // Filter categories based on selection
   const filteredCategories: Category[] = useMemo(() => {
     return shopData
       .map((cat) => {
@@ -26,7 +25,7 @@ export default function ShopPage() {
   }, [selectedCategory, selectedProduct]);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-16">
+    <div className="max-w-7xl mx-auto px-6 py-16">
       {/* Category Navigation */}
       <CategoryNav
         categories={shopData}
@@ -34,18 +33,17 @@ export default function ShopPage() {
         onCategorySelect={setSelectedCategory}
       />
 
-      <div className="my-12 border-l h-16 mx-auto opacity-30" />
+      {/* Filters on top */}
+      <FiltersSidebar
+        categories={shopData}
+        selectedCategory={selectedCategory}
+        setSelectedCategory={setSelectedCategory}
+        selectedProduct={selectedProduct}
+        setSelectedProduct={setSelectedProduct}
+      />
 
-      {/* Filters + Products */}
-      <div className="grid grid-cols-1 md:grid-cols-[280px_1fr] gap-12">
-        <FiltersSidebar
-          categories={shopData}
-          selectedCategory={selectedCategory}
-          setSelectedCategory={setSelectedCategory}
-          selectedProduct={selectedProduct}
-          setSelectedProduct={setSelectedProduct}
-        />
-
+      {/* Products full width */}
+      <div className="mt-12">
         <ProductGrid
           categories={filteredCategories}
           selectedProduct={selectedProduct}

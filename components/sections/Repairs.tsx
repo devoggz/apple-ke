@@ -18,32 +18,31 @@ const Repairs = () => {
   return (
     <section id="repairs" className="translate-y-20 py-16 ">
       <div>
-        <img src="/logo.svg" alt="Apple logo" className="w-10" />
+        <img src="/logo-dark.svg" alt="Apple logo" className="w-10" />
 
         <h1>Repairs</h1>
         <p>
           Cracked screens, battery issues, or any other problems—our certified
           technicians deliver fast, reliable fixes.
         </p>
-        <button onClick={onOpen} className="button flex items-center gap-3">
+        <button onClick={onOpen} className=" flex items-center gap-3">
           Talk to a Technician{" "}
-          <span>
-            <ChevronRight />
-          </span>
         </button>
-        <video
-          className="rounded-2xl"
-          width="900"
-          src="/videos/game.mp4"
-          loop
-          muted
-          autoPlay
-          playsInline
-        />
+        <div className="px-4">
+          <video
+            className="rounded-3xl"
+            width="800"
+            src="/videos/game.mp4"
+            loop
+            muted
+            autoPlay
+            playsInline
+          />
+        </div>
 
         {/*<img src="/iphone.png" alt="iphone" />*/}
       </div>
-      <Modal isOpen={isOpen} placement="top-center" onOpenChange={onOpenChange}>
+      <Modal isOpen={isOpen} placement="center" onOpenChange={onOpenChange}>
         <ModalContent>
           {(onClose) => (
             <>

@@ -8,6 +8,7 @@ import { useCart } from "@/components/cart/CartProvider";
 import RelatedProducts from "@/components/shop/RelatedProducts";
 import { Tabs } from "@/components/ui/Tabs";
 import Button from "@/components/ui/Button";
+import { CartIcon } from "@heroui/shared-icons";
 
 export default function ProductDetailPage({
   params: paramsPromise,
@@ -27,7 +28,7 @@ export default function ProductDetailPage({
 
   if (!product) {
     return (
-      <div className="max-w-4xl mx-auto py-32 px-4 text-center">
+      <div className="max-w-7xl mx-auto py-24 px-4 text-center">
         <h1 className="text-2xl font-semibold">Product not found</h1>
         <p className="text-sm text-gray-500 mt-2">
           We couldn't locate that product.
@@ -82,7 +83,7 @@ export default function ProductDetailPage({
   ];
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-20">
+    <div className="max-w-7xl mx-auto px-6 py-20">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
         {/* LEFT - Images */}
         <motion.div
@@ -210,8 +211,23 @@ export default function ProductDetailPage({
 
           {/* Action buttons */}
           <div className="mt-8 w-full flex gap-3">
-            <Button onClick={handleAddToCart}>Add to Cart</Button>
-            <Button onClick={handleBuyNow}>Buy Now</Button>
+            {/*<button*/}
+            {/*  onClick={handleAddToCart}*/}
+            {/*  className="bg-primary text-white py-2.5 px-4 flex gap-3 items-center rounded-full font-medium text-sm cursor-pointer hover:bg-white hover:text-black transition-all duration-300 ease-in-out"*/}
+            {/*>*/}
+            {/*  Add to Cart*/}
+            {/*  <img src="/cart.svg" alt="Cart" />*/}
+            {/*</button>*/}
+            <button
+              onClick={handleBuyNow}
+              className="bg-green-500 text-white py-2.5 px-4 flex gap-3 items-center rounded-full font-medium text-sm cursor-pointer hover:bg-gray-50 hover:text-black transition-all duration-300 ease-in-out"
+            >
+              Buy Now
+            </button>
+            <button className="bg-primary text-white py-2.5 px-4 flex gap-3 items-center rounded-full font-medium text-sm cursor-pointer hover:bg-gray-50 hover:text-black transition-all duration-300 ease-in-out">
+              WhatsApp Order
+              <img src="/cart.svg" alt="Cart" />
+            </button>
           </div>
 
           {/* Metadata */}

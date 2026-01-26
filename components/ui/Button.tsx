@@ -21,7 +21,7 @@ export default function Button({
   disabled = false,
 }: ButtonProps) {
   const baseClasses =
-    "px-5 py-2 rounded-lg font-medium text-sm transition-all duration-200 flex items-center justify-center";
+    "px-5 py-3 rounded-lg font-medium text-sm transition-all duration-200 flex items-center justify-center";
 
   const variantsClasses = {
     primary: "bg-black text-white hover:bg-gray-900",

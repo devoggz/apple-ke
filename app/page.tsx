@@ -1,13 +1,10 @@
 import gsap from "gsap";
 
-import { ScrollTrigger } from "gsap/all";
 import {
   Repairs,
-  Hero,
-  TradeIn,
-  Macbook,
   Showcase,
-  HeroAlt,
+  HeroMin,
+  CategorySection,
 } from "@/components/sections";
 
 gsap.registerPlugin();
@@ -15,12 +12,10 @@ gsap.registerPlugin();
 export default function Home() {
   return (
     <main>
-      <HeroAlt />
-
+      <HeroMin />
       <Repairs />
-      {/*<Macbook/>*/}
       <Showcase />
-      {/*<TradeIn/>*/}
+      <CategorySection />
     </main>
   );
 }

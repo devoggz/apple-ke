@@ -37,28 +37,30 @@ export default function ProductCard({ product }: ProductCardProps) {
 
   return (
     <motion.div
-      className="border rounded-xl p-4 flex flex-col items-center cursor-pointer hover:shadow-lg transition-shadow"
+      className="overflow-clip rounded-xl bg-gray-50 dark:bg-dark-300 h-[460px]  flex flex-col items-center cursor-pointer space-y-4  transition-shadow"
       whileHover={{ scale: 1.03 }}
       onClick={() => router.push(`/product/${product.slug}`)}
     >
+      <img src="/logo-dark.svg" alt="Apple logo" className="w-8 mt-12" />
+
+      <div className="text-lg text-dark-300 dark:text-dark-100 font-bold text-center ">
+        {product.name}
+      </div>
+      <div className="text-sm text-gray-500 ">
+        From{" "}
+        <span className="font-bold">KES {selectedPrice.toLocaleString()}</span>
+      </div>
+      <button
+        onClick={() => router.push(`/product/${product.slug}`)}
+        className=" bg-primary text-white py-2.5 px-4 rounded-full font-medium text-sm cursor-pointer hover:bg-white hover:text-black transition-all duration-300 ease-in-out"
+      >
+        Buy
+      </button>
       <img
         src={heroImage}
         alt={product.name}
-        className="w-full h-40 object-contain mb-2"
+        className="w-full h-fit  object-cover "
       />
-
-      <div className="text-sm font-medium text-center">{product.name}</div>
-      <div className="text-xs text-gray-500 mt-1">
-        KES {selectedPrice.toLocaleString()}
-      </div>
-
-      <Button
-        onClick={handleAddToCart}
-        variant="secondary"
-        className="mt-2 w-full text-xs py-1"
-      >
-        Add to Cart
-      </Button>
     </motion.div>
   );
 }
