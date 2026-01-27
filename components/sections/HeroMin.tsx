@@ -83,23 +83,23 @@ const HeroMin = () => {
         "-=0.5",
       );
 
-      // 4. Image animation - slides up from bottom with fade and scale
-      tl.fromTo(
-        imageRef.current,
-        {
-          opacity: 0,
-          y: 60,
-          scale: 0.95,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 1.2,
-          ease: "power2.out",
-        },
-        "-=0.6",
-      );
+      // // 4. Image animation - slides up from bottom with fade and scale
+      // tl.fromTo(
+      //   imageRef.current,
+      //   {
+      //     opacity: 0,
+      //     y: 60,
+      //     scale: 0.95,
+      //   },
+      //   {
+      //     opacity: 1,
+      //     y: 0,
+      //     scale: 1,
+      //     duration: 1.2,
+      //     ease: "power2.out",
+      //   },
+      //   "-=0.6",
+      // );
 
       // Add subtle continuous float animation to image (after scroll animation)
       gsap.to(imageRef.current, {
