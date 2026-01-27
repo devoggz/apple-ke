@@ -2,6 +2,7 @@
 
 import { Category, Product } from "@/app/data/shop";
 import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 
 export default function FiltersSidebar({
   categories,
@@ -39,10 +40,9 @@ export default function FiltersSidebar({
   return (
     <div className="w-full flex flex-col md:flex-row gap-6 items-end flex-wrap">
       {/* Category */}
-      <div className="w-fit md:w-64">
-        {/*<label className="block text-sm font-medium mb-1">Category</label>*/}
+      <div className="w-full md:w-64 relative">
         <select
-          className="w-full  rounded-lg p-2 px-4"
+          className="w-full appearance-none bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-xl p-3 px-4 pr-10 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 cursor-pointer hover:border-gray-400 dark:hover:border-gray-600"
           value={selectedCategory ?? ""}
           onChange={(e) => {
             const val = e.target.value || null;
@@ -57,13 +57,13 @@ export default function FiltersSidebar({
             </option>
           ))}
         </select>
+        <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 pointer-events-none" />
       </div>
 
       {/* Product */}
-      <div className="w-full md:w-64">
-        {/*<label className="block text-sm font-medium mb-1">Product</label>*/}
+      <div className="w-full md:w-64 relative">
         <select
-          className="w-full  rounded-lg p-2"
+          className="w-full appearance-none bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-xl p-3 px-4 pr-10 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 cursor-pointer hover:border-gray-400 dark:hover:border-gray-600 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:border-gray-300 dark:disabled:hover:border-gray-700"
           value={selectedProduct ?? ""}
           onChange={(e) => setSelectedProduct(e.target.value || null)}
           disabled={!selectedCategory}
@@ -75,13 +75,13 @@ export default function FiltersSidebar({
             </option>
           ))}
         </select>
+        <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 pointer-events-none" />
       </div>
 
       {/* Price Range */}
-      <div className="w-full md:w-64">
-        {/*<label className="block text-sm font-medium mb-1">Price Range</label>*/}
+      <div className="w-full md:w-64 relative">
         <select
-          className="w-full  rounded-lg p-2"
+          className="w-full appearance-none bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-xl p-3 px-4 pr-10 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 cursor-pointer hover:border-gray-400 dark:hover:border-gray-600"
           value={selectedPrice ?? ""}
           onChange={(e) => setSelectedPrice(e.target.value || null)}
         >
@@ -91,13 +91,13 @@ export default function FiltersSidebar({
             </option>
           ))}
         </select>
+        <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 pointer-events-none" />
       </div>
 
       {/* Availability / Status */}
-      <div className="w-full md:w-64">
-        {/*<label className="block text-sm font-medium mb-1">Availability</label>*/}
+      <div className="w-full md:w-64 relative">
         <select
-          className="w-full  rounded-lg p-2"
+          className="w-full appearance-none bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-xl p-3 px-4 pr-10 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 cursor-pointer hover:border-gray-400 dark:hover:border-gray-600"
           value={selectedStatus ?? ""}
           onChange={(e) => setSelectedStatus(e.target.value || null)}
         >
@@ -107,6 +107,7 @@ export default function FiltersSidebar({
             </option>
           ))}
         </select>
+        <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 pointer-events-none" />
       </div>
     </div>
   );
