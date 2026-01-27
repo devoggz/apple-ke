@@ -242,11 +242,7 @@ const Showcase: React.FC = () => {
 
         <h3 ref={subheadingRef}>Here's what you get with the new iPhone 17.</h3>
 
-        <button
-          ref={buttonRef}
-          onClick={onOpen}
-          className="flex items-center gap-3"
-        >
+        <button ref={buttonRef} onClick={onOpen}>
           Get your estimate
         </button>
       </div>
@@ -273,8 +269,8 @@ const Showcase: React.FC = () => {
           <div className="apple-gradient">
             <img src="/ai.png" alt="AI" />
             <p>
-              New <br />
-              <span>Apple intelligence.</span>
+              Apple intelligence <br />
+              <span>Even more intelligence.</span>
             </p>
           </div>
 

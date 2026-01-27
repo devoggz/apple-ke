@@ -164,7 +164,7 @@ body {
 
     }
     #heroshort {
-        @apply max-w-screen h-fit lg:h-[70vh] flex flex-col items-center overflow-clip;
+        @apply max-w-screen h-fit lg:h-[80vh] flex flex-col items-center overflow-clip;
 
         div {
             @apply relative z-10  col-center;
@@ -430,17 +430,17 @@ body {
                     @apply p-10 rounded-3xl flex items-center gap-7 relative;
 
                     background: #1d1d1f;
-                    background-clip: padding-box; /* !important */
-                    border: 3px solid transparent; /* !important */
+                    background-clip: padding-box;
+                    border: 3px solid transparent;
 
-                    ::before {
+                    &::before {
                         content: "";
                         pointer-events: none;
                         position: absolute;
                         inset: 0px;
                         z-index: -1;
-                        margin: -5px; /* !important */
-                        border-radius: 24px; /* !important */
+                        margin: -3px;
+                        border-radius: 24px;
                         background: linear-gradient(
                                 91deg,
                                 #0096ff 0%,
@@ -618,6 +618,43 @@ body {
 
     .footer-socials span {
         @apply w-10 h-10 rounded-full bg-white text-[#1d1d1f] flex items-center justify-center cursor-pointer hover:bg-black hover:text-white transition;
+    }
+}
+@layer components {
+    .hamburger {
+        @apply relative w-6 h-[2px] bg-white block transition-all duration-300;
+    }
+
+    .hamburger::before,
+    .hamburger::after {
+        content: "";
+        @apply absolute left-0 w-6 h-[2px] bg-white transition-all duration-300;
+    }
+
+    .hamburger::before {
+        @apply -top-2;
+    }
+
+    .hamburger::after {
+        @apply top-2;
+    }
+
+    .mobile-menu {
+        @apply fixed inset-0 bg-black/90 backdrop-blur-sm z-40
+        opacity-0 pointer-events-none transition-all duration-300 md:hidden;
+    }
+
+    .mobile-menu.open {
+        @apply opacity-100 pointer-events-auto;
+    }
+
+    .mobile-menu ul {
+        @apply mt-24 flex flex-col gap-6 px-6;
+    }
+
+    .mobile-menu a {
+        @apply text-white text-lg font-medium opacity-90
+        hover:opacity-100 transition;
     }
 }
 
