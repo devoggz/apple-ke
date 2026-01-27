@@ -25,25 +25,31 @@ export default function ShopPage() {
   }, [selectedCategory, selectedProduct]);
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-16">
-      {/* Category Navigation */}
-      <CategoryNav
-        categories={shopData}
-        selectedCategory={selectedCategory}
-        onCategorySelect={setSelectedCategory}
-      />
+    <div className="w-full px-6 py-16">
+      <div className="max-w-7xl mx-auto">
+        {/* Category Navigation */}
+        <CategoryNav
+          categories={shopData}
+          selectedCategory={selectedCategory}
+          onCategorySelect={setSelectedCategory}
+        />
+      </div>
 
-      {/* Filters on top */}
-      <FiltersSidebar
-        categories={shopData}
-        selectedCategory={selectedCategory}
-        setSelectedCategory={setSelectedCategory}
-        selectedProduct={selectedProduct}
-        setSelectedProduct={setSelectedProduct}
-      />
+      {/* Filters on top - Full width with max-w-7xl */}
+      <div className="max-w-7xl mx-auto mt-8">
+        <div className="flex justify-between items-end">
+          <FiltersSidebar
+            categories={shopData}
+            selectedCategory={selectedCategory}
+            setSelectedCategory={setSelectedCategory}
+            selectedProduct={selectedProduct}
+            setSelectedProduct={setSelectedProduct}
+          />
+        </div>
+      </div>
 
       {/* Products full width */}
-      <div className="mt-12">
+      <div className="max-w-7xl mx-auto mt-12">
         <ProductGrid
           categories={filteredCategories}
           selectedProduct={selectedProduct}

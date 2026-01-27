@@ -33,7 +33,8 @@ interface TradeInFormData {
 
 const inputBase =
   "w-full rounded-xl border border-neutral-300  px-3 py-3 mt-4 text-sm text-dark-100 focus:outline-none focus:border-dark-100 transition";
-
+const newBase =
+  "w-full appearance-none bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-xl p-3 px-4 pr-10 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-all duration-200 cursor-pointer hover:border-gray-400 dark:hover:border-gray-600 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:border-gray-300 dark:disabled:hover:border-gray-700";
 const labelBase = "text-sm font-medium text-dark-100 mb-3";
 
 export default function TradeInForm() {
@@ -205,7 +206,7 @@ export default function TradeInForm() {
               name="contactMethod"
               value={formData.contactMethod || ""}
               onChange={handleChange}
-              className={inputBase}
+              className={newBase}
             >
               <option value="">Select…</option>
               {CONTACT_METHODS.map((m) => (
@@ -227,7 +228,7 @@ export default function TradeInForm() {
               name="model"
               value={formData.model || ""}
               onChange={handleChange}
-              className={inputBase}
+              className={newBase}
             >
               <option value="">Select…</option>
               {PRODUCT_MODELS["iphone"]?.map((m: ModelOption) => (
@@ -254,7 +255,7 @@ export default function TradeInForm() {
               name="condition"
               value={formData.condition || ""}
               onChange={handleChange}
-              className={inputBase}
+              className={newBase}
             >
               <option value="">Select…</option>
               {["Excellent", "Good", "Fair", "Poor", "Damaged"].map((c) => (
@@ -299,7 +300,7 @@ export default function TradeInForm() {
               name="proofOfOwnership"
               value={formData.proofOfOwnership || ""}
               onChange={handleChange}
-              className={inputBase}
+              className={newBase}
             >
               <option value="">Select…</option>
               {OWNERSHIP_PROOFS.map((p) => (

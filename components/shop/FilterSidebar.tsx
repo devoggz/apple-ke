@@ -38,9 +38,9 @@ export default function FiltersSidebar({
   ];
 
   return (
-    <div className="w-full flex flex-col md:flex-row gap-6 items-end flex-wrap">
+    <div className="w-full flex flex-col md:flex-row gap-4 items-stretch md:items-end justify-between">
       {/* Category */}
-      <div className="w-full md:w-64 relative">
+      <div className="w-full md:w-64 relative flex-shrink-0">
         <select
           className="w-full appearance-none bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-xl p-3 px-4 pr-10 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 cursor-pointer hover:border-gray-400 dark:hover:border-gray-600"
           value={selectedCategory ?? ""}
@@ -61,7 +61,7 @@ export default function FiltersSidebar({
       </div>
 
       {/* Product */}
-      <div className="w-full md:w-64 relative">
+      <div className="w-full md:w-64 relative flex-shrink-0">
         <select
           className="w-full appearance-none bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-xl p-3 px-4 pr-10 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 cursor-pointer hover:border-gray-400 dark:hover:border-gray-600 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:border-gray-300 dark:disabled:hover:border-gray-700"
           value={selectedProduct ?? ""}
@@ -79,7 +79,7 @@ export default function FiltersSidebar({
       </div>
 
       {/* Price Range */}
-      <div className="w-full md:w-64 relative">
+      <div className="w-full md:w-64 relative flex-shrink-0">
         <select
           className="w-full appearance-none bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-xl p-3 px-4 pr-10 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 cursor-pointer hover:border-gray-400 dark:hover:border-gray-600"
           value={selectedPrice ?? ""}
@@ -95,7 +95,7 @@ export default function FiltersSidebar({
       </div>
 
       {/* Availability / Status */}
-      <div className="w-full md:w-64 relative">
+      <div className="w-full md:w-64 relative flex-shrink-0">
         <select
           className="w-full appearance-none bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-xl p-3 px-4 pr-10 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 cursor-pointer hover:border-gray-400 dark:hover:border-gray-600"
           value={selectedStatus ?? ""}

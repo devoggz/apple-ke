@@ -35,6 +35,8 @@ interface FormData {
 
 const inputBase =
   "w-full rounded-xl border border-neutral-300 text-dark-100 px-3 py-3 text-sm focus:outline-none focus:border-dark-100 transition mt-4";
+const newBase =
+  "w-full appearance-none bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-xl p-3 px-4 pr-10 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-all duration-200 cursor-pointer hover:border-gray-400 dark:hover:border-gray-600 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:border-gray-300 dark:disabled:hover:border-gray-700";
 
 const labelBase = "text-sm font-medium text-dark-100";
 
@@ -122,7 +124,7 @@ export default function DiagnosisForm() {
           </div>
 
           <div className="">
-            <label className={labelBase}>Preferred Contact Method</label>
+            <label className={newBase}>Preferred Contact Method</label>
             <select
               name="contactMethod"
               value={formData.contactMethod || ""}
@@ -149,7 +151,7 @@ export default function DiagnosisForm() {
               name="productType"
               value={formData.productType || ""}
               onChange={handleChange}
-              className={inputBase}
+              className={newBase}
             >
               <option value="">Select…</option>
               {PRODUCT_TYPES.map((p) => (
@@ -167,7 +169,7 @@ export default function DiagnosisForm() {
                 name="model"
                 value={formData.model || ""}
                 onChange={handleChange}
-                className={inputBase}
+                className={newBase}
               >
                 <option value="">Select…</option>
                 {PRODUCT_MODELS[selectedProductType]?.map((m) => (
@@ -190,7 +192,7 @@ export default function DiagnosisForm() {
               name="issueType"
               value={formData.issueType || ""}
               onChange={handleChange}
-              className={inputBase}
+              className={newBase}
             >
               <option value="">Select…</option>
               {ISSUE_TYPES.map((i) => (
@@ -233,7 +235,7 @@ export default function DiagnosisForm() {
               name="warrantyStatus"
               value={formData.warrantyStatus || ""}
               onChange={handleChange}
-              className={inputBase}
+              className={newBase}
             >
               <option value="">Select…</option>
               {WARRANTY_STATUS.map((w) => (
