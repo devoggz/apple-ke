@@ -7,7 +7,7 @@ const Footer = () => {
       {/* Link columns */}
       <div className="footer-grid">
         <div>
-          <h4>Products</h4>
+          <h4 className="text-dark-200 dark:text-dark-100">Products</h4>
           <ul>
             <li>iPhone</li>
             <li>AirPods</li>
@@ -21,7 +21,7 @@ const Footer = () => {
         </div>
 
         <div>
-          <h4>Service</h4>
+          <h4 className="text-dark-200 dark:text-dark-100">Service</h4>
           <ul>
             <li>Shop</li>
             <li>Repairs</li>
@@ -34,7 +34,7 @@ const Footer = () => {
         </div>
 
         <div>
-          <h4>Top Sellers</h4>
+          <h4 className="text-dark-200 dark:text-dark-100">Top Sellers</h4>
           <ul>
             <li>iPhone 16 Pro Max</li>
             <li>iPad Air M3</li>
@@ -47,7 +47,7 @@ const Footer = () => {
         </div>
 
         <div>
-          <h4>Company</h4>
+          <h4 className="text-dark-200 dark:text-dark-100">Company</h4>
           <ul>
             <li>About us</li>
             <li>Policies</li>
@@ -58,7 +58,7 @@ const Footer = () => {
         </div>
 
         <div>
-          <h4>Useful Links</h4>
+          <h4 className="text-dark-200 dark:text-dark-100">Useful Links</h4>
           <ul>
             <li>iPhone Photography</li>
             <li>iPhone Battery Health</li>

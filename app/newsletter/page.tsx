@@ -32,12 +32,12 @@ export default function NewsletterPage() {
   });
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-dark-400">
+    <div className="min-h-screen dark:bg-dark-400">
       {/* Hero Section */}
-      <section className="bg-white dark:bg-dark-300 border-b border-gray-200 dark:border-dark-200">
+      <section className="bg-white dark:bg-dark-300  border-gray-200 dark:border-dark-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center space-y-4">
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white">
+            <h1 className="text-5xl md:text-6xl font-bold text-dark-200 dark:text-dark-100">
               Apple Newsroom
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
@@ -55,7 +55,7 @@ export default function NewsletterPage() {
                 placeholder="Search articles..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-4 py-4 rounded-full border border-gray-300 dark:border-dark-200 bg-gray-50 dark:bg-dark-400 text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                className="w-full pl-12 pr-4 py-4 rounded-full border border-gray-300 dark:border-dark-200 dark:bg-dark-400 text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
               />
             </div>
           </div>
@@ -69,7 +69,7 @@ export default function NewsletterPage() {
                 className={`px-6 py-2.5 rounded-full font-medium text-sm transition-all ${
                   selectedCategory === category
                     ? "bg-primary text-white shadow-lg"
-                    : "bg-gray-200 dark:bg-dark-400 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-dark-200"
+                    : "bg-gray-200 dark:bg-dark-300 text-dark-300 dark:text-dark-100 hover:bg-gray-300 dark:border-1 dark:hover:bg-dark-200"
                 }`}
               >
                 {category}
@@ -112,7 +112,7 @@ export default function NewsletterPage() {
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-6 py-4 rounded-full border border-gray-300 dark:border-dark-200 bg-gray-50 dark:bg-dark-400 text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+              className="flex-1 px-6 py-4 rounded-full border border-gray-300 dark:border-dark-200  dark:bg-dark-400 text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
             />
             <button className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-semibold transition-all whitespace-nowrap">
               Subscribe

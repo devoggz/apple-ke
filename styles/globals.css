@@ -84,7 +84,7 @@ body {
 }
 
 @utility h3-semibold {
-    @apply font-medium text-xl text-dark-100;
+    @apply font-medium text-lg text-dark-100;
 }
 
 @utility base-semibold {
@@ -164,13 +164,13 @@ body {
 
     }
     #heroshort {
-        @apply max-w-screen h-[76vh] flex flex-col items-center    overflow-hidden ;
+        @apply max-w-screen h-fit lg:h-[70vh] flex flex-col items-center overflow-clip;
 
         div {
             @apply relative z-10  col-center;
 
             h1 {
-                @apply text-dark-200 dark:text-dark-100 font-semibold tracking-normal py-18 md:py-10 text-6xl  text-center max-w-lg ;
+                @apply text-dark-200 dark:text-dark-100 font-bold tracking-normal py-16 md:py-12 text-4xl  text-center max-w-sm ;
             }
 
             p {
@@ -184,7 +184,7 @@ body {
 
 
             img {
-                @apply container z-40 mx-auto w-full   ;
+                @apply  mx-auto w-full   ;
             }
         }
 
@@ -213,12 +213,12 @@ body {
 
 
         p {
-            @apply lg:h3-semibold base-semibold leading-relaxed mx-auto max-w-xl text-center translate-y-10 px-5 ;
+            @apply lg:h3-semibold base-semibold leading-relaxed mx-auto max-w-xl text-center translate-y-10 px-5  text-xl md:text-3xl mt-10 ;
         }
 
 
         button {
-            @apply relative mb-12 z-10 bg-primary text-white py-2.5 px-4 mt-16 md:mt-24  rounded-full font-medium text-sm cursor-pointer hover:bg-gray-50 hover:text-black transition-all duration-300 ease-in-out;
+            @apply relative mb-12 z-10 bg-primary text-white py-2.5 px-4 mt-16 md:mt-24  rounded-full font-medium text-lg cursor-pointer hover:bg-gray-50 hover:text-black transition-all duration-300 ease-in-out;
         }
 
 
@@ -380,7 +380,7 @@ body {
     }
 
     #highlights {
-        @apply px-4  mx-auto lg:py-20 translate-y-24;
+        @apply px-4  mx-auto ;
 
         h2 {
             @apply text-dark-200 dark:text-dark-100 font-semibold text-3xl md:text-7xl text-center max-w-3xl mx-auto;
@@ -390,7 +390,7 @@ body {
             @apply text-dark-100 font-semibold text-xl md:text-3xl text-center mt-10;
         }
         button {
-            @apply relative mb-12 z-10 bg-primary text-white py-2.5 px-6 mt-12 lg:mt-12  rounded-full font-medium text-sm cursor-pointer hover:bg-gray-50 hover:text-black transition-all duration-300 ease-in-out;
+            @apply relative mb-12 z-10 bg-primary text-white py-3 px-6 mt-12 lg:mt-12  rounded-full font-medium text-lg cursor-pointer hover:bg-gray-50 hover:text-black transition-all duration-300 ease-in-out;
         }
 
         .masonry {
@@ -577,7 +577,7 @@ body {
 
 @layer components {
     .site-footer {
-        @apply w-full bg-[#f5f5f7] text-[#6e6e73] px-6 lg:px-0;
+        @apply w-full bg-[#f5f5f7] dark:bg-dark-300 text-dark-100 px-6 lg:px-0;
     }
 
     .footer-divider {
@@ -585,7 +585,7 @@ body {
     }
 
     .footer-grid {
-        @apply max-w-7xl mx-auto grid grid-cols-2 px-6 sm:grid-cols-3 lg:grid-cols-5 gap-10 py-14 text-sm;
+        @apply max-w-7xl mx-auto grid grid-cols-2 px-6 sm:grid-cols-3 text-dark-100 lg:grid-cols-5 gap-10 py-14 text-xs;
     }
 
     .footer-grid h4 {
@@ -605,11 +605,11 @@ body {
     }
 
     .footer-contact {
-        @apply flex flex-col gap-2 text-[#1d1d1f];
+        @apply flex flex-col gap-2 text-dark-300 dark:text-dark-100;
     }
 
     .footer-payments img {
-        @apply h-18 object-contain;
+        @apply h-18 object-contain rounded-xl;
     }
 
     .footer-socials {

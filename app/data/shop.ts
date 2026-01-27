@@ -52,7 +52,7 @@ export const shopData: Category[] = [
     name: "iPhone",
     slug: "iphone",
     icon: "Smartphone",
-    image: "/iphone-14.png",
+    image: "/iphone13.png",
     description: "Apple smartphones with iOS.",
     products: [
       {
@@ -163,7 +163,7 @@ export const shopData: Category[] = [
     name: "MacBook",
     slug: "macbook",
     icon: "Laptop",
-    image: "/Macbook-laptop.png",
+    image: "/images/mbp_14.png",
     description: "Apple laptops powered by Apple silicon.",
     products: [
       {
@@ -191,7 +191,7 @@ export const shopData: Category[] = [
         availableStorage: ["512GB", "1TB"],
         screenSizes: ["14-inch"],
         imagesByColor: {
-          "Space Black": ["/Macbook-laptop.png"],
+          "Space Black": ["/images/mbp_14.png"],
           Silver: ["/Mac.png"],
         },
         heroImage: "/Macbook-laptop.png",
@@ -283,7 +283,7 @@ export const shopData: Category[] = [
     name: "Apple Watch",
     slug: "apple-watch",
     icon: "Headphones",
-    image: "/watch.png",
+    image: "/images/watch.png",
     description: "Essential Apple accessories.",
     products: [],
   },
@@ -336,9 +336,9 @@ export const shopData: Category[] = [
         availableColors: ["White"],
         availableStorage: ["Standard"],
         imagesByColor: {
-          White: ["/watch.png"],
+          White: ["/images/airpods.png"],
         },
-        heroImage: "/watch.png",
+        heroImage: "/images/watch.png",
         whatsInTheBox: [
           "AirPods Pro",
           "Charging Case",

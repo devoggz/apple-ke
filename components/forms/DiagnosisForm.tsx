@@ -17,7 +17,9 @@ import {
 } from "@/app/data/data";
 
 interface FormData {
-  fullName?: string;
+  firstName?: string;
+  lastName?: string;
+
   email?: string;
   phone?: string;
   contactMethod?: string;
@@ -32,9 +34,9 @@ interface FormData {
 }
 
 const inputBase =
-  "w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 text-sm focus:outline-none focus:border-black transition";
+  "w-full rounded-xl border border-neutral-300 text-dark-100 px-3 py-3 text-sm focus:outline-none focus:border-dark-100 transition mt-4";
 
-const labelBase = "text-sm font-medium text-dark-200 mb-4";
+const labelBase = "text-sm font-medium text-dark-100";
 
 export default function DiagnosisForm() {
   const router = useRouter();
@@ -65,7 +67,7 @@ export default function DiagnosisForm() {
         <h1 className="text-2xl font-semibold">Device Diagnosis Request</h1>
         <div className="h-1 w-full bg-neutral-200 rounded-full overflow-hidden">
           <div
-            className="h-full bg-black transition-all"
+            className="h-full bg-primary transition-all"
             style={{ width: `${progress}%` }}
           />
         </div>
@@ -77,29 +79,35 @@ export default function DiagnosisForm() {
       {/* STEP 1 */}
       {currentStep === 1 && (
         <section className="space-y-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 ">
             <div>
-              <label className={labelBase}>Full Name</label>
+              <label className={labelBase}>First Name</label>
               <input
-                name="fullName"
-                value={formData.fullName || ""}
+                name="firstName"
+                value={formData.firstName || ""}
                 onChange={handleChange}
                 className={inputBase}
-                placeholder="John Doe"
               />
             </div>
-
             <div>
-              <label className={labelBase}>Email</label>
+              <label className={labelBase}>Last Name</label>
               <input
-                name="email"
-                type="email"
-                value={formData.email || ""}
+                name="lastName"
+                value={formData.lastName || ""}
                 onChange={handleChange}
                 className={inputBase}
-                placeholder="john@example.com"
               />
             </div>
+          </div>
+          <div>
+            <label className={labelBase}>Email Address</label>
+            <input
+              type="email"
+              name="email"
+              value={formData.email || ""}
+              onChange={handleChange}
+              className={inputBase}
+            />
           </div>
 
           <div>
@@ -251,7 +259,7 @@ export default function DiagnosisForm() {
 
         <button
           onClick={handleNext}
-          className="flex-1 px-6 py-2 rounded-full bg-black hover:bg-primary text-white"
+          className="flex-1 px-6 py-2 rounded-full bg-dark-200 hover:bg-primary text-white"
         >
           {currentStep < totalSteps ? "Continue" : "Submit"}
         </button>

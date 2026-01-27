@@ -61,7 +61,7 @@ export const newsArticles: NewsArticle[] = [
       "Next-generation earbuds include advanced hearing and health sensors",
     description:
       "Apple's AirPods Pro 3 blur the line between audio device and health monitor. The new model includes clinical-grade hearing test capabilities, approved by the FDA for over-the-counter hearing aid functionality. Advanced sensors can now measure heart rate through the ear canal with accuracy comparable to chest-worn monitors. The spatial audio experience has been enhanced with personalized HRTF (Head-Related Transfer Function) profiles created using the iPhone's TrueDepth camera. Active Noise Cancellation now adapts in real-time to your environment, with conversation awareness that automatically adjusts when you start speaking. Battery life extends to 7 hours with ANC enabled, and the new USB-C case supports wireless charging at 15W.",
-    image: "/watch.png",
+    image: "/images/airpods.png",
     publisher: "9to5Mac",
     datePosted: "2026-01-12",
     category: "Accessories",

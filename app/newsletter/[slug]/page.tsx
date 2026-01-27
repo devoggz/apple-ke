@@ -138,7 +138,7 @@ export default function NewsArticlePage() {
       >
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="prose prose-lg dark:prose-invert max-w-none">
-            <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed first-letter:text-6xl first-letter:font-bold first-letter:text-primary first-letter:mr-2 first-letter:float-left">
+            <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed ">
               {article.description}
             </p>
 
@@ -169,7 +169,7 @@ export default function NewsArticlePage() {
                 </p>
               </div>
 
-              <div className="bg-gray-50 dark:bg-dark-400 rounded-2xl p-8 border-l-4 border-primary">
+              <div className=" rounded-2xl p-8 border-l-4 border-primary">
                 <p className="text-xl italic text-gray-700 dark:text-gray-300">
                   "This is exactly the kind of innovation that keeps Apple at
                   the forefront of technology. It's not just about specs—it's
@@ -217,7 +217,7 @@ export default function NewsArticlePage() {
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-6 py-4 rounded-full border border-gray-300 dark:border-dark-200 bg-gray-50 dark:bg-dark-400 text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+              className="flex-1 px-6 py-4 rounded-full border border-gray-300 dark:border-dark-200 text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
             />
             <button className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-semibold transition-all whitespace-nowrap">
               Subscribe

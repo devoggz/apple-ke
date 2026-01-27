@@ -1,8 +1,13 @@
 import OrderProgress from "@/components/order/OrderProgress";
 import { mockOrders } from "@/app/lib/mockOrders";
 
-export default function UserOrderPage({ params }: { params: { id: string } }) {
-  const order = mockOrders[params.id];
+type PageProps = {
+  params: Promise<{ id: string }>;
+};
+
+export default async function UserOrderPage({ params }: PageProps) {
+  const { id } = await params;
+  const order = mockOrders[id];
 
   if (!order) {
     return (

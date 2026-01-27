@@ -16,7 +16,8 @@ const OWNERSHIP_PROOFS = [
 ];
 
 interface TradeInFormData {
-  fullName?: string;
+  firstName?: string;
+  lastName?: string;
   email?: string;
   phone?: string;
   contactMethod?: string;
@@ -31,9 +32,9 @@ interface TradeInFormData {
 }
 
 const inputBase =
-  "w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 text-sm focus:outline-none focus:border-black transition";
+  "w-full rounded-xl border border-neutral-300  px-3 py-3 mt-4 text-sm text-dark-100 focus:outline-none focus:border-dark-100 transition";
 
-const labelBase = "text-sm font-medium text-neutral-700 mb-1";
+const labelBase = "text-sm font-medium text-dark-100 mb-3";
 
 export default function TradeInForm() {
   const router = useRouter();
@@ -58,7 +59,8 @@ export default function TradeInForm() {
     switch (step) {
       case 1:
         return !!(
-          formData.fullName &&
+          formData.firstName &&
+          formData.lastName &&
           formData.email &&
           formData.phone &&
           formData.contactMethod
@@ -138,13 +140,13 @@ export default function TradeInForm() {
   const progress = (currentStep / totalSteps) * 100;
 
   return (
-    <div className="w-full max-w-3xl mx-auto py-10">
+    <div className="w-full max-w-3xl mx-auto py-10 ">
       {/* Header */}
       <div className="mb-10 space-y-3">
         <h1 className="text-2xl font-semibold">Trade-In Request</h1>
         <div className="h-1 w-full bg-neutral-200 rounded-full overflow-hidden">
           <div
-            className="h-full bg-black transition-all"
+            className="h-full bg-primary transition-all"
             style={{ width: `${progress}%` }}
           />
         </div>
@@ -155,28 +157,36 @@ export default function TradeInForm() {
 
       {/* STEP 1 */}
       {currentStep === 1 && (
-        <section className="space-y-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <section className="space-y-6 ">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 ">
             <div>
-              <label className={labelBase}>Full Name</label>
+              <label className={labelBase}>First Name</label>
               <input
-                name="fullName"
-                value={formData.fullName || ""}
+                name="firstName"
+                value={formData.firstName || ""}
                 onChange={handleChange}
                 className={inputBase}
               />
             </div>
-
             <div>
-              <label className={labelBase}>Email</label>
+              <label className={labelBase}>Last Name</label>
               <input
-                type="email"
-                name="email"
-                value={formData.email || ""}
+                name="lastName"
+                value={formData.lastName || ""}
                 onChange={handleChange}
                 className={inputBase}
               />
             </div>
+          </div>
+          <div>
+            <label className={labelBase}>Email Address</label>
+            <input
+              type="email"
+              name="email"
+              value={formData.email || ""}
+              onChange={handleChange}
+              className={inputBase}
+            />
           </div>
 
           <div>
@@ -364,7 +374,7 @@ export default function TradeInForm() {
 
         <button
           onClick={currentStep < totalSteps ? handleNext : handleSubmit}
-          className="flex-1 px-6 py-2 hover:bg-primary rounded-full bg-black text-white"
+          className="flex-1 px-6 py-2 hover:bg-primary rounded-full bg-dark-200 text-white"
         >
           {currentStep < totalSteps ? "Continue" : "Submit Trade-In"}
         </button>

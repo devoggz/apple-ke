@@ -38,7 +38,7 @@ export default function ProductCard({ product }: ProductCardProps) {
   return (
     <motion.div
       className="overflow-clip rounded-xl bg-gray-50 dark:bg-dark-300 h-[460px]  flex flex-col items-center cursor-pointer space-y-4  transition-shadow"
-      whileHover={{ scale: 1.03 }}
+      whileHover={{ scale: 1.02 }}
       onClick={() => router.push(`/product/${product.slug}`)}
     >
       <img src="/logo-dark.svg" alt="Apple logo" className="w-8 mt-12" />
@@ -59,7 +59,7 @@ export default function ProductCard({ product }: ProductCardProps) {
       <img
         src={heroImage}
         alt={product.name}
-        className="w-full h-fit  object-cover "
+        className="w-[300px] h-[300px]  object-cover "
       />
     </motion.div>
   );

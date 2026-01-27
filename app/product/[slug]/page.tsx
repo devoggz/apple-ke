@@ -211,13 +211,13 @@ export default function ProductDetailPage({
 
           {/* Action buttons */}
           <div className="mt-8 w-full flex gap-3">
-            {/*<button*/}
-            {/*  onClick={handleAddToCart}*/}
-            {/*  className="bg-primary text-white py-2.5 px-4 flex gap-3 items-center rounded-full font-medium text-sm cursor-pointer hover:bg-white hover:text-black transition-all duration-300 ease-in-out"*/}
-            {/*>*/}
-            {/*  Add to Cart*/}
-            {/*  <img src="/cart.svg" alt="Cart" />*/}
-            {/*</button>*/}
+            <button
+              onClick={handleAddToCart}
+              className="bg-primary text-white py-2.5 px-4 flex gap-3 items-center rounded-full font-medium text-sm cursor-pointer hover:bg-white hover:text-black transition-all duration-300 ease-in-out"
+            >
+              Add to Cart
+              <img src="/cart.svg" alt="Cart" />
+            </button>
             <button
               onClick={handleBuyNow}
               className="bg-green-500 text-white py-2.5 px-4 flex gap-3 items-center rounded-full font-medium text-sm cursor-pointer hover:bg-gray-50 hover:text-black transition-all duration-300 ease-in-out"

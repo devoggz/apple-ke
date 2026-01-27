@@ -2,8 +2,9 @@
 
 import { motion } from "framer-motion";
 import { Product } from "@/app/data/shop";
-import Button from "@/components/ui/Button";
 import { useRouter } from "next/navigation";
+import React from "react";
+import { Button } from "@heroui/button";
 
 interface RelatedProductsProps {
   products: Product[];
@@ -25,14 +26,14 @@ export default function RelatedProducts({
         {related.map((product) => (
           <motion.div
             key={product.productId}
-            className="min-w-[180px] border rounded-xl p-4 flex flex-col items-center cursor-pointer"
+            className="min-w-[200px]  rounded-xl p-4 flex flex-col items-center cursor-pointer"
             whileHover={{ scale: 1.05 }}
             onClick={() => router.push(`/product/${product.slug}`)}
           >
             <img
               src={product.heroImage}
               alt={product.name}
-              className="w-full h-32 object-contain mb-2"
+              className="w-32 h-32 object-contain mb-2"
             />
             <div className="text-sm font-medium text-center">
               {product.name}
@@ -40,10 +41,14 @@ export default function RelatedProducts({
             <div className="text-xs text-gray-500 mt-1">
               KES {product.pricing[0].price.toLocaleString()}
             </div>
+
             <Button
-              onClick={() => router.push(`/product/${product.slug}`)}
-              className="mt-2 w-full text-xs py-1"
-              variant="secondary"
+              variant="faded"
+              color="primary"
+              radius="full"
+              size="sm"
+              className="mt-4"
+              onPress={() => router.push(`/product/${product.slug}`)}
             >
               View
             </Button>

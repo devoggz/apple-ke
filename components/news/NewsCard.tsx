@@ -30,13 +30,13 @@ export default function NewsCard({ article, index }: NewsCardProps) {
       className="group cursor-pointer"
       onClick={() => router.push(`/newsletter/${article.slug}`)}
     >
-      <div className="overflow-hidden rounded-2xl bg-white dark:bg-dark-300 shadow-sm hover:shadow-xl transition-all duration-300">
+      <div className="overflow-hidden rounded-2xl bg-white dark:bg-dark-300 shadow-sm  transition-all duration-300">
         {/* Image Container */}
         <div className="relative overflow-hidden aspect-[16/10]">
           <motion.img
             src={article.image}
             alt={article.title}
-            className="w-full h-full object-cover"
+            className="w-[600px] h-[460px] object-cover"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.4 }}
           />

@@ -3,8 +3,8 @@ const navLinks = [
   { label: "Shop", link: "/shop" },
   { label: "Trade In", link: "/trade-in" },
   { label: "Repairs", link: "/repairs" },
-  { label: "Newsletter", link: "/newsletter" },
-  { label: "Contact", link: "/contact" },
+  { label: "News", link: "/newsletter" },
+  { label: "Get in Touch", link: "/contact" },
 ];
 
 const performanceImages = [

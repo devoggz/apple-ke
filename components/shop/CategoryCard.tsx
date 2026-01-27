@@ -14,9 +14,9 @@ export default function CategoryCard({ category }: CategoryCardProps) {
 
   return (
     <motion.div
-      className="overflow-clip rounded-xl bg-gray-50 dark:bg-dark-300 h-[500px] flex flex-col items-center cursor-pointer space-y-4 transition-shadow"
-      whileHover={{ scale: 1.03 }}
-      onClick={() => router.push(`/shop/${category.slug}`)}
+      className="overflow-clip bg-gray-50 dark:bg-dark-300 h-[580px] flex flex-col items-center cursor-pointer space-y-4 transition-shadow"
+      whileHover={{ scale: 1.01 }}
+      onClick={() => router.push("/shop")}
     >
       <img src="/logo-dark.svg" alt="Apple logo" className="w-8 mt-12" />
 
@@ -29,7 +29,7 @@ export default function CategoryCard({ category }: CategoryCardProps) {
       <button
         onClick={(e) => {
           e.stopPropagation();
-          router.push(`/shop/${category.slug}`);
+          router.push("/shop");
         }}
         className="bg-primary text-white py-2.5 px-4 rounded-full font-medium text-sm cursor-pointer hover:bg-white hover:text-black transition-all duration-300 ease-in-out"
       >
@@ -38,7 +38,7 @@ export default function CategoryCard({ category }: CategoryCardProps) {
       <img
         src={category.image}
         alt={category.name}
-        className="w-full h-fit object-contain"
+        className="w-[500px] h-[380px] object-contain"
       />
     </motion.div>
   );
