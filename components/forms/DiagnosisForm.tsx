@@ -4,6 +4,7 @@ import React from "react";
 import { useRouter } from "next/navigation";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
+import { addToast } from "@heroui/toast";
 
 import {
   PRODUCT_TYPES,
@@ -33,6 +34,10 @@ interface FormData {
   images?: string[];
 }
 
+interface DiagnosisFormProps {
+  onClose?: () => void;
+}
+
 const inputBase =
   "w-full rounded-xl border border-neutral-300 text-dark-100 px-3 py-3 text-sm focus:outline-none focus:border-dark-100 transition mt-4";
 const newBase =
@@ -40,7 +45,7 @@ const newBase =
 
 const labelBase = "text-sm font-medium text-dark-100";
 
-export default function DiagnosisForm() {
+export default function DiagnosisForm({ onClose }: DiagnosisFormProps = {}) {
   const router = useRouter();
   const [currentStep, setCurrentStep] = React.useState(1);
   const [formData, setFormData] = React.useState<FormData>({});
@@ -56,8 +61,42 @@ export default function DiagnosisForm() {
     setFormData((p) => ({ ...p, [name]: value }));
   };
 
-  const handleNext = () => setCurrentStep((s) => Math.min(s + 1, totalSteps));
+  const handleNext = () => {
+    if (currentStep < totalSteps) {
+      setCurrentStep((s) => Math.min(s + 1, totalSteps));
+    } else {
+      handleSubmit();
+    }
+  };
+
   const handleBack = () => setCurrentStep((s) => Math.max(s - 1, 1));
+
+  const handleSubmit = () => {
+    // Here you would typically send the data to your backend
+    console.log("Form submitted:", formData);
+
+    // Show success toast
+    addToast({
+      title: "Success!",
+      description:
+        "Diagnosis request submitted successfully! We'll contact you soon.",
+      color: "success",
+    });
+
+    // Close modal and redirect after short delay
+    setTimeout(() => {
+      setFormData({});
+      setCurrentStep(1);
+
+      // Close modal if onClose is provided
+      if (onClose) {
+        onClose();
+      } else {
+        // Otherwise redirect to home
+        router.push("/");
+      }
+    }, 1500);
+  };
 
   const progress = (currentStep / totalSteps) * 100;
   const selectedProductType = formData.productType as ProductType | undefined;
