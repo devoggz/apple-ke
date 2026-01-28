@@ -31,7 +31,7 @@ export default function ShopPage() {
         <CategoryNav
           categories={shopData}
           selectedCategory={selectedCategory}
-          onCategorySelect={setSelectedCategory}
+          onCategorySelectAction={setSelectedCategory}
         />
       </div>
 
