@@ -622,13 +622,13 @@ body {
 }
 @layer components {
     .hamburger {
-        @apply relative w-6 h-[2px] bg-white block transition-all duration-300;
+        @apply relative w-4 h-[2px] bg-white block transition-all duration-300;
     }
 
     .hamburger::before,
     .hamburger::after {
         content: "";
-        @apply absolute left-0 w-6 h-[2px] bg-white transition-all duration-300;
+        @apply absolute left-0 w-4 h-[2px] bg-white transition-all duration-300;
     }
 
     .hamburger::before {
