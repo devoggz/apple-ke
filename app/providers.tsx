@@ -26,36 +26,10 @@ export function Providers({ children, themeProps }: ProvidersProps) {
 
   return (
     <HeroUIProvider navigate={router.push}>
-      {/*<ToastProvider>*/}
+      <ToastProvider placement="top-right" toastOffset={60} />
       <NextThemesProvider {...themeProps}>
         <CartProvider>{children}</CartProvider>
       </NextThemesProvider>
-      {/*</ToastProvider>*/}
     </HeroUIProvider>
   );
-}
-
-{
-  /*<ToastProvider*/
-}
-{
-  /*  placement="top-right"*/
-}
-{
-  /*  disableAnimation={false}*/
-}
-{
-  /*  maxVisibleToasts={5}*/
-}
-{
-  /*  toastOffset={10}*/
-}
-{
-  /*  toastProps={{}}*/
-}
-{
-  /*  regionProps={{}}*/
-}
-{
-  /*>*/
 }
