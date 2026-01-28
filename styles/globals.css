@@ -427,7 +427,7 @@ body {
                     @apply font-semibold text-4xl max-w-2xs;
                 }
                 .apple-gradient {
-                    @apply p-10 rounded-3xl flex items-center gap-7 relative;
+                    @apply rounded-3xl flex items-center gap-7 relative;
                     background: linear-gradient(
                             91deg,
                             #0096ff 0%,
@@ -450,7 +450,11 @@ body {
                         background: #1d1d1f;
                         border-radius: 21px;
                         z-index: 0;
+                        padding: 2.5rem; /* 40px - matches p-10 */
                     }
+
+                    /* Add padding to the container itself for content */
+                    padding: calc(3px + 2.5rem);
 
                     p {
                         @apply font-semibold lg:text-2xl 2xl:text-3xl;
