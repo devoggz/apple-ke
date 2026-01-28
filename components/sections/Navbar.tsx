@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { navLinks } from "@/app/constants";
 import { ThemeSwitch } from "@/components/theme-switch";
+import Link from "next/link";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -11,7 +12,9 @@ const Navbar = () => {
     <header>
       <nav>
         {/* Logo */}
-        <img src="/new-logo.png" alt="Apple logo" className="max-w-[84px]" />
+        <Link href="/" className="cursor-pointer">
+          <img src="/new-logo.png" alt="Apple logo" className="max-w-[84px]" />
+        </Link>
 
         {/* Desktop nav */}
         <ul className="hidden md:flex">
