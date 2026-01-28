@@ -124,12 +124,12 @@ export default function DiagnosisForm() {
           </div>
 
           <div className="">
-            <label className={newBase}>Preferred Contact Method</label>
+            <label className={labelBase}>Preferred Contact Method</label>
             <select
               name="contactMethod"
               value={formData.contactMethod || ""}
               onChange={handleChange}
-              className={inputBase}
+              className={newBase}
             >
               <option value="">Select…</option>
               {CONTACT_METHODS.map((m) => (
