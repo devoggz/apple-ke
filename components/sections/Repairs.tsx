@@ -26,7 +26,26 @@ const Repairs = () => {
       const sectionEl = sectionRef.current;
       if (!sectionEl) return;
 
-      // Create a timeline for sequential animations
+      // Skip animations on mobile - just set everything to visible
+      if (isMobile) {
+        gsap.set(
+          [
+            logoRef.current,
+            headingRef.current,
+            paragraphRef.current,
+            buttonRef.current,
+            videoRef.current,
+          ],
+          {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+          },
+        );
+        return;
+      }
+
+      // Create a timeline for sequential animations (desktop only)
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionEl,
@@ -118,19 +137,17 @@ const Repairs = () => {
         "-=0.5",
       );
 
-      // Add subtle parallax effect to the video on scroll (separate from main timeline)
-      if (!isMobile) {
-        gsap.to(videoRef.current, {
-          y: -20,
-          ease: "none",
-          scrollTrigger: {
-            trigger: videoRef.current,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: 2,
-          },
-        });
-      }
+      // Add subtle parallax effect to the video on scroll (desktop only)
+      gsap.to(videoRef.current, {
+        y: -20,
+        ease: "none",
+        scrollTrigger: {
+          trigger: videoRef.current,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 2,
+        },
+      });
     },
     { scope: sectionRef, dependencies: [isMobile] },
   );

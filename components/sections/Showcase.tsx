@@ -30,6 +30,45 @@ const Showcase: React.FC = () => {
       const section = sectionRef.current;
       if (!section) return;
 
+      // Skip animations on mobile - just set everything to visible
+      if (isMobile) {
+        gsap.set(
+          [
+            logoRef.current,
+            taglineRef.current,
+            headingRef.current,
+            subheadingRef.current,
+            buttonRef.current,
+            leftColumnRef.current,
+            rightColumnRef.current,
+          ],
+          {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+          },
+        );
+
+        // Also set all cards to visible on mobile
+        if (leftColumnRef.current) {
+          const leftCards =
+            leftColumnRef.current.querySelectorAll(":scope > div");
+          if (leftCards.length > 0) {
+            gsap.set(leftCards, { opacity: 1, y: 0, scale: 1 });
+          }
+        }
+
+        if (rightColumnRef.current) {
+          const rightCards =
+            rightColumnRef.current.querySelectorAll(":scope > div");
+          if (rightCards.length > 0) {
+            gsap.set(rightCards, { opacity: 1, y: 0, scale: 1 });
+          }
+        }
+        return;
+      }
+
+      // Desktop animations below
       // Create main timeline for header content
       const headerTimeline = gsap.timeline({
         scrollTrigger: {

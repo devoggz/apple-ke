@@ -3,6 +3,7 @@
 import { shopData } from "@/app/data/shop";
 import CategoryCard from "@/components/shop/CategoryCard";
 import React, { useRef } from "react";
+import { useMediaQuery } from "react-responsive";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -11,6 +12,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function CategorySection() {
+  const isMobile = useMediaQuery({ query: "(max-width: 1024px)" });
+
   // Refs for animated elements
   const sectionRef = useRef<HTMLElement>(null);
   const logoRef = useRef<HTMLImageElement>(null);
@@ -31,6 +34,25 @@ export default function CategorySection() {
       const section = sectionRef.current;
       if (!section) return;
 
+      // Skip animations on mobile - just set everything to visible
+      if (isMobile) {
+        gsap.set([logoRef.current, headingRef.current], {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+        });
+
+        // Also set all cards to visible on mobile
+        if (gridRef.current) {
+          const cards = gridRef.current.querySelectorAll(":scope > div");
+          if (cards.length > 0) {
+            gsap.set(cards, { opacity: 1, y: 0, scale: 1 });
+          }
+        }
+        return;
+      }
+
+      // Desktop animations below
       // Logo and heading animation
       const headerTimeline = gsap.timeline({
         scrollTrigger: {
@@ -109,7 +131,7 @@ export default function CategorySection() {
         }
       }
     },
-    { scope: sectionRef, dependencies: [mainCategories.length] },
+    { scope: sectionRef, dependencies: [isMobile, mainCategories.length] },
   );
 
   return (
