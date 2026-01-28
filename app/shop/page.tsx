@@ -26,7 +26,7 @@ export default function ShopPage() {
 
   return (
     <div className="w-full px-6 py-16">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto hidden md:block">
         {/* Category Navigation */}
         <CategoryNav
           categories={shopData}
