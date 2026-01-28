@@ -22,11 +22,20 @@ export default function RelatedProducts({
   return (
     <div className="mt-16">
       <h2 className="text-xl font-semibold mb-4">You may also like</h2>
-      <div className="flex gap-4 overflow-x-auto pb-2">
+      <div
+        className="flex gap-4 overflow-x-auto pb-2 scrollbar-hide"
+        style={{
+          // Enable momentum scrolling on iOS
+          WebkitOverflowScrolling: "touch",
+          // Hide scrollbar on all browsers
+          scrollbarWidth: "none",
+          msOverflowStyle: "none",
+        }}
+      >
         {related.map((product) => (
           <motion.div
             key={product.productId}
-            className="min-w-[200px]  rounded-xl p-4 flex flex-col items-center cursor-pointer"
+            className="min-w-[200px] rounded-xl p-4 flex flex-col items-center cursor-pointer"
             whileHover={{ scale: 1.05 }}
             onClick={() => router.push(`/product/${product.slug}`)}
           >
